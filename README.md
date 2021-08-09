@@ -2,6 +2,13 @@
 
 An [Eleventy](https://github.com/11ty/eleventy) blog starter forked from [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) but with Sia's opinions.
 
+A partial list of Sia's changes (opinions):
+- Move all source code to the **/src/** directory
+- Move most filters to a separate **/src/_11ty/filters.js** file to clean up the **.eleventy.js** config file a bit
+- Adds more filters commonly used by Sia
+- Inline and minify CSS by default (Note: if you have a lot of CSS, you should probably undo this)
+- More accessible color scheme for code blocks. Uses CSS variables so it's easier to switch it up.
+
 ## Deploy this to your own site
 
 These builders are amazing—try them out to get your own Eleventy site in a few clicks!
