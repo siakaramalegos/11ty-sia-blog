@@ -1,7 +1,7 @@
 {
-  "name": "eleventy-base-blog",
-  "version": "5.0.2",
-  "description": "A starter repository for a blog web site using the Eleventy static site generator.",
+  "name": "11ty-sia-blog",
+  "version": "0.0.1",
+  "description": "An Eleventy blog starter forked from eleventy-base-blog but with Sia's opinions",
   "scripts": {
     "build": "npx eleventy",
     "start": "npx eleventy --serve",
@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
+    "url": "git://github.com/siakaramalegos/11ty-sia-blog.git"
   },
   "author": {
-    "name": "Zach Leatherman",
-    "email": "zachleatherman@gmail.com",
-    "url": "https://zachleat.com/"
+    "name": "Sia Karamalegos",
+    "email": "siakaramalegos@gmail.com",
+    "url": "https://sia.codes/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
+    "url": "https://github.com/siakaramalegos/11ty-sia-blog/issues"
   },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+  "homepage": "https://github.com/siakaramalegos/11ty-sia-blog",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-navigation": "^0.3.2",

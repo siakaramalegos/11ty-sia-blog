@@ -6,8 +6,8 @@ An [Eleventy](https://github.com/11ty/eleventy) blog starter forked from [eleven
 
 These builders are amazing—try them out to get your own Eleventy site in a few clicks!
 
-* [Get your own Eleventy web site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/11ty/eleventy-base-blog)
-* [Get your own Eleventy web site on Vercel](https://vercel.com/import/project?template=11ty%2Feleventy-base-blog)
+* [Get your own Eleventy web site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/siakaramalegos/11ty-sia-blog)
+* [Get your own Eleventy web site on Vercel](https://vercel.com/import/project?template=siakaramalegos%2F11ty-sia-blog)
 
 ## Getting Started
 
