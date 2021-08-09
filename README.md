@@ -1,14 +1,6 @@
-# eleventy-base-blog
+# 11ty-sia-blog
 
-A starter repository showing how to build a blog with the [Eleventy](https://github.com/11ty/eleventy) static site generator.
-
-[![Build Status](https://travis-ci.org/11ty/eleventy-base-blog.svg?branch=master)](https://travis-ci.org/11ty/eleventy-base-blog)
-
-## Demos
-
-* [Netlify](https://eleventy-base-blog.netlify.com/)
-* [GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
-* [Remix on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
+An [Eleventy](https://github.com/11ty/eleventy) blog starter forked from [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) but with Sia's opinions.
 
 ## Deploy this to your own site
 
@@ -19,46 +11,24 @@ These builders are amazing—try them out to get your own Eleventy site in a few
 
 ## Getting Started
 
-### 1. Clone this Repository
+1. Clone this Repository
+2. Navigate to the directory and install dependencies
+  ```
+  cd my-blog-name
+  npm install
+  ```
+3. Look at `.eleventy.js` to see if you want to configure any Eleventy options differently.
+4. Edit _data/metadata.json
+5. Run Eleventy locally on a dev server:
+  ```
+  npm start
+  ```
+6. Generate a production build:
+  ```
+  npm run build
+  ```
 
-```
-git clone https://github.com/11ty/eleventy-base-blog.git my-blog-name
-```
-
-
-### 2. Navigate to the directory
-
-```
-cd my-blog-name
-```
-
-Specifically have a look at `.eleventy.js` to see if you want to configure any Eleventy options differently.
-
-### 3. Install dependencies
-
-```
-npm install
-```
-
-### 4. Edit _data/metadata.json
-
-### 5. Run Eleventy
-
-```
-npx eleventy
-```
-
-Or build and host locally for local development
-```
-npx eleventy --serve
-```
-
-Or build automatically when a template changes:
-```
-npx eleventy --watch
-```
-
-Or in debug mode:
+To run in debug mode:
 ```
 DEBUG=* npx eleventy
 ```
