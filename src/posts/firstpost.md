@@ -8,6 +8,24 @@ layout: layouts/post.njk
 ---
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
+<figure>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Didelphis_virginiana_with_young.JPG" alt="Didelphis virginiana (American possum) with young" width="1044" height="783">
+	<figcaption>This is how you can add an image with a caption</figcaption>
+</figure>
+
+By adding the original height and width, you can prevent layout shift at all screen sizes:
+
+```html
+<figure>
+	<img
+		src="https://upload.wikimedia.org/wikipedia/commons/0/07/Didelphis_virginiana_with_young.JPG"
+		alt="Didelphis virginiana (American possum) with young"
+		width="1044"
+		height="783">
+	<figcaption>This is how you can add an image with a caption</figcaption>
+</figure>
+```
+
 Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
 
 ## Section Header

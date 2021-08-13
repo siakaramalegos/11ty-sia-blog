@@ -30,26 +30,15 @@
       {%- for entry in collections.all | eleventyNavigation %}
         <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
       {%- endfor %}
+        <li class="nav-item"><a href="/feed/feed.xml">RSS</a></li>
       </ul>
     </header>
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-
-      <!-- Delete this message -->
-      <div class="warning">
-        <ol>
-          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
-          <li>(Optional) Edit <code>.eleventy.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
-          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
-        </ol>
-        <p><em>This is an <a href="https://www.11ty.dev/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
-      </div>
-      <!-- Stop deleting -->
-
       {{ content | safe }}
     </main>
 
-    <footer></footer>
+    {% include 'footer.njk' %}
 
     <!-- Current page: {{ page.url | url }} -->
   </body>

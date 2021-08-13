@@ -2,24 +2,29 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1>{{ title }}</h1>
 
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-{%- for tag in tags | filterTagList -%}
-{%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-{%- endfor %}
+<div class="h-entry content-780 flow">
+  <h1 class="p-name">{{ title }}</h1>
 
-{{ content | safe }}
+  <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+  {%- for tag in tags | filterTagList -%}
+    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+    <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+  {%- endfor %}
 
-{%- if collections.posts %}
-{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-{%- if nextPost or previousPost %}
-<hr>
-<ul>
-  {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-  {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-</ul>
-{%- endif %}
-{%- endif %}
+  <div class="e-content flow">
+    {{ content | safe }}
+  </div>
+
+  {%- if collections.posts %}
+    {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+    {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+    {%- if nextPost or previousPost %}
+      <hr>
+      <ul>
+        {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+        {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+      </ul>
+    {%- endif %}
+  {%- endif %}
+</div>

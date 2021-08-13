@@ -1,12 +1,29 @@
 /* Colors */
 :root {
+  --font-body: -apple-system, system-ui, sans-serif;
+  --font-display: -apple-system, system-ui, sans-serif;
+
   --lightgray: #e0e0e0;
   --gray: #C0C0C0;
   --darkgray: #333;
   --navy: #17050F;
-  --blue: #082840;
+  --blue: #007cb9;
+  --light-blue: #9ad5f2;
   --white: #fff;
+
+  --size-200: 0.694rem;
+  --size-300: 0.833rem;
+  --size-400: 1rem;
+  --size-500: 1.2rem;
+  --size-600: 1.44rem;
+  --size-700: 1.728rem;
+  --size-800: 2.074rem;
+  --size-900: 2.488rem;
+  --size-1000: 2.986rem;
 }
+
+/* Reset */
+*,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
 /* Global stylesheet */
 * {
@@ -15,35 +32,79 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, system-ui, sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 100%; /* 16px */
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.3;
+}
+h1 {
+  font-size: clamp(var(--size-900), 5vw, 4rem);
+}
+h2, h2 code { font-size: var(--size-800); }
+h3, h3 code { font-size: var(--size-700); }
+h4 { font-size: var(--size-600); }
+h5 { font-size: var(--size-500); }
+small { font-size: var(--size-300); }
+
+main {
+  max-width: 100vw;
+  padding: 0 1em 2em;
+}
+
+.flow > * + * { margin-top: var(--flow-space, 1em);}
+blockquote, aside {--flow-space: var(--size-700)}
+lite-youtube {--flow-space: var(--size-700)}
+.card-list {--flow-space: var(--size-700)}
+.tmpl-post :is(h2, h3) {--flow-space: var(--size-900);}
+.tmpl-post :is(h2, h3) + * {--flow-space: var(--size-400);}
+.tmpl-post figure, .tmpl-post figure + * {--flow-space: var(--size-900);}
+
+.tmpl-post figure { margin: 2.5em 0; text-align: center; }
+.tmpl-post img { margin: auto; }
+.tmpl-post figcaption {
+  color: var(--grey-60);
+  font-size: var(--size-300);
+  margin-top: 1em;
+  text-align: center;}
+.tmpl-post .e-content>img:not(.u-photo), .tmpl-post .e-content>p img:not(.u-photo), .tmpl-post figure, pre {
+  width:100vw;
+  max-width:58rem;
+  margin-left:50%;
+  transform:translateX(-50%);
+  position:relative;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
 p:last-child {
   margin-bottom: 0;
-}
-p,
-.tmpl-post li,
-img {
-  max-width: 37.5em; /* 600px /16 */
-}
-p,
-.tmpl-post li {
-  line-height: 1.45;
 }
 a[href] {
   color: var(--blue);
 }
-a[href]:visited {
-  color: var(--navy);
+a[href]:hover {
+  opacity: 0.8;
 }
-main {
-  padding: 1rem;
-}
-main :first-child {
-  margin-top: 0;
+.content-780 {
+  max-width: 780px;
+  margin: 2em auto;
 }
 header {
   border-bottom: 1px dashed var(--lightgray);
@@ -52,6 +113,16 @@ header:after {
   content: "";
   display: table;
   clear: both;
+}
+.header-masthead {
+  background-color: var(--light-blue);
+  margin-bottom: var(--size-900);
+  padding: var(--size-1000) 16px;
+
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  position:relative;
 }
 table {
   margin: 1em 0;
@@ -163,15 +234,6 @@ a[href].post-tag:focus {
   align-self: center;
 }
 
-/* Warning */
-.warning {
-  background-color: #ffc;
-  padding: 1em 0.625em; /* 16px 10px /16 */
-}
-.warning ol:only-child {
-  margin: 0;
-}
-
 /* Direct Links / Markdown Headers */
 .direct-link {
   font-family: sans-serif;
@@ -188,4 +250,28 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
   color: #aaa;
+}
+
+/* Footer */
+footer {
+  padding: var(--size-400);
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  :root {
+    --size-200: 0.64rem;
+    --size-300: 0.8rem;
+    --size-400: 1rem;
+    --size-500: 1.25rem;
+    --size-600: 1.563rem;
+    --size-700: 1.953rem;
+    --size-800: 2.441rem;
+    --size-900: 3.052rem;
+    --size-1000: 3.815rem;
+  }
+  html,
+  body {
+    font-size: 112.5%;
+  } /*18px*/
 }

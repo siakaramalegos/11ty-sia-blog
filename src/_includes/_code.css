@@ -21,7 +21,7 @@ code, pre {
 	font-family: var(--font-code);
 	font-size: var(--size-300);
   padding: 0.5rem;
-  line-height: 1.5;
+  line-height: 1.6;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -33,10 +33,10 @@ code, pre {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
-	background: var(--black);
 	color: var(--white);
 }
 pre {
+	background: var(--black);
 	margin: 2.5rem 0;
 	overflow: auto;
 }
